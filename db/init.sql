@@ -41,6 +41,7 @@ create table role (
 );
 
 CREATE TABLE movie_cast_member (
+    movie_cast_member_id INT PRIMARY KEY,
     movie_id INT,
     cast_member_id INT,
     role_id INT,
