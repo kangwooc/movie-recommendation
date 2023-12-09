@@ -67,6 +67,7 @@ CREATE TABLE users (
 );
 
 CREATE TABLE users_genre (
+    users_genre_id INT PRIMARY KEY,
     user_id INT,
     genre_id INT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
