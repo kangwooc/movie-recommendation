@@ -104,7 +104,8 @@ CREATE TABLE viewing_history (
 
 -- 영화 메타데이터 테이블 (Movie Metadata Table)
 CREATE TABLE movie_metadata (
-        movie_id INT PRIMARY KEY,
+        movie_metadata_id INT PRIMARY KEY,
+        movie_id INT,
         keywords TEXT,
         production_country VARCHAR(255),
         language VARCHAR(100),
