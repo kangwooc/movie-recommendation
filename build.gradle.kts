@@ -6,6 +6,8 @@ plugins {
     kotlin("jvm") version "1.8.22"
     kotlin("plugin.spring") version "1.8.22"
     kotlin("plugin.jpa") version "1.8.22"
+
+    id("org.jlleitschuh.gradle.ktlint") version "12.0.2"
 }
 
 group = "com.fastfive"
@@ -19,6 +21,7 @@ repositories {
     mavenCentral()
     maven { url = uri("https://repo.spring.io/milestone") }
     maven { url = uri("https://repo.spring.io/snapshot") }
+    maven(url = "https://plugins.gradle.org/m2/")
 }
 
 dependencies {
