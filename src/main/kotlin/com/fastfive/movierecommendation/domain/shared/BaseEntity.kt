@@ -1,4 +1,4 @@
-package com.fastfive.movierecommendation.application.domain.model
+package com.fastfive.movierecommendation.domain.shared
 
 import jakarta.persistence.Column
 import jakarta.persistence.EntityListeners

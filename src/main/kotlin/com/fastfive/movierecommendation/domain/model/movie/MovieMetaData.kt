@@ -1,5 +1,6 @@
-package com.fastfive.movierecommendation.application.domain.model
+package com.fastfive.movierecommendation.domain.model.movie
 
+import com.fastfive.movierecommendation.domain.shared.BaseEntity
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.FetchType.LAZY

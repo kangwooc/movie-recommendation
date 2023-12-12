@@ -25,6 +25,7 @@ CREATE TABLE movies (
 );
 
 CREATE TABLE genres_movies (
+    genres_movies_id INT PRIMARY KEY,
     movie_id INT,
     genre_id INT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -127,19 +128,6 @@ CREATE TABLE recommendations (
                                  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                                  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                                  FOREIGN KEY (user_id) REFERENCES users(user_id)
-);
-
--- 사용자 피드백 테이블 (User Feedback Table)
-CREATE TABLE user_feedback (
-                               feedback_id INT PRIMARY KEY,
-                               user_id INT,
-                               movie_id INT,
-                               feedback TEXT,
-                               feedback_date DATE,
-                               created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                               updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                               FOREIGN KEY (user_id) REFERENCES users(user_id),
-                               FOREIGN KEY (movie_id) REFERENCES movies(movie_id)
 );
 
 CREATE FUNCTION update_updated_at_user_task()

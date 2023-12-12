@@ -1,5 +1,6 @@
-package com.fastfive.movierecommendation.application.domain.model
+package com.fastfive.movierecommendation.domain.model.movie
 
+import com.fastfive.movierecommendation.domain.shared.BaseEntity
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.FetchType.LAZY
@@ -8,21 +9,16 @@ import jakarta.persistence.Id
 import jakarta.persistence.JoinColumn
 import jakarta.persistence.ManyToOne
 import jakarta.persistence.Table
-import java.time.LocalDateTime
 
 @Entity
-@Table(name = "viewing_history")
-class ViewingHistory(
+@Table(name = "genres_movies")
+class GenresMovies(
     @Id @GeneratedValue
-    @Column(name = "history_id")
-    var historyId: Long,
-    @Column(name = "view_date")
-    var viewDate: LocalDateTime,
-    @Column(name = "view_duration")
-    var viewDuration: Long,
+    @Column(name = "genres_movies_id")
+    var genreMovieId: Long,
     @ManyToOne(fetch = LAZY)
-    @JoinColumn(name = "user_id")
-    var user: User,
+    @JoinColumn(name = "genre_id")
+    var genre: Genre,
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "movie_id")
     var movie: Movie,
