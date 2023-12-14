@@ -18,7 +18,7 @@ import java.time.LocalDateTime
 class ViewingHistory(
     @Id @GeneratedValue
     @Column(name = "history_id")
-    var historyId: Long,
+    var historyId: Long? = null,
     @Column(name = "view_date")
     var viewDate: LocalDateTime,
     @Column(name = "view_duration")

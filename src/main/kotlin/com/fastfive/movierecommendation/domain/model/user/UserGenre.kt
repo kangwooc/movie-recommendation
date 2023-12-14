@@ -15,7 +15,7 @@ import jakarta.persistence.Table
 class UserGenre(
     @Id @GeneratedValue
     @Column(name = "user_genre_id")
-    val id: Long,
+    val id: Long? = null,
     @ManyToOne(fetch = LAZY)
     val user: User,
     @ManyToOne(fetch = LAZY)

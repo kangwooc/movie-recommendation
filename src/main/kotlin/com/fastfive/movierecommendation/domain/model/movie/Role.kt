@@ -8,8 +8,8 @@ import jakarta.persistence.Id
 @Entity
 class Role(
     @Id @GeneratedValue
-    @Column(name = "role_name")
-    var id: Long,
+    @Column(name = "role_id")
+    var id: Long? = null,
     @Column(length = 255)
     var name: String,
 )

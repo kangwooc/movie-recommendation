@@ -15,7 +15,7 @@ import jakarta.persistence.Table
 class GenresMovies(
     @Id @GeneratedValue
     @Column(name = "genres_movies_id")
-    var genreMovieId: Long,
+    var genreMovieId: Long? = null,
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "genre_id")
     var genre: Genre,

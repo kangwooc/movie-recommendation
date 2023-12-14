@@ -15,7 +15,7 @@ import jakarta.persistence.Table
 class MovieCastMemberRole(
     @Id @GeneratedValue
     @Column(name = "movie_cast_member_id")
-    var movieCastMemberRoleId: Long,
+    var movieCastMemberRoleId: Long? = null,
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "cast_member_id")
     var castMember: CastMember,

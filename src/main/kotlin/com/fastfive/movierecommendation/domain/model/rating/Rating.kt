@@ -19,7 +19,7 @@ import java.time.LocalDateTime
 class Rating(
     @Id @GeneratedValue
     @Column(name = "rating_id")
-    var ratingId: Long,
+    var ratingId: Long? = null,
     @Column(name = "score", precision = 10, scale = 0, columnDefinition = "numeric(2,1)")
     var score: Double,
     @Lob

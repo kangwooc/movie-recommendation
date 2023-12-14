@@ -16,7 +16,7 @@ import java.time.LocalDateTime
 @Table(name = "movies")
 class Movie(
     @Id @GeneratedValue @Column(name = "movie_id")
-    var movieId: Long,
+    var movieId: Long? = null,
     var title: String,
     @Column(name = "release_date")
     var releaseDate: LocalDateTime,

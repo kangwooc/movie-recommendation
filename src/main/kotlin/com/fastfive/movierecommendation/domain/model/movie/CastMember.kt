@@ -13,7 +13,7 @@ import java.time.LocalDateTime
 @Table(name = "cast_member")
 class CastMember(
     @Id @GeneratedValue @Column(name = "cast_member_id")
-    var castMemberId: Long,
+    var castMemberId: Long? = null,
     @Column(length = 255)
     var name: String,
     @Lob

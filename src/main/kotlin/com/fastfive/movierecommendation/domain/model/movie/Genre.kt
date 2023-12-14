@@ -12,7 +12,7 @@ import jakarta.persistence.Table
 class Genre(
     @Id @GeneratedValue
     @Column(name = "genre_id")
-    var genreId: Long,
+    var genreId: Long? = null,
     @Column(length = 255)
     var name: String,
 ) : BaseEntity()

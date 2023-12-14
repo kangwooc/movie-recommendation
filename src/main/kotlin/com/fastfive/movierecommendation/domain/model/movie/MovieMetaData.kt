@@ -15,7 +15,7 @@ import java.math.BigInteger
 class MovieMetaData(
     @Id @GeneratedValue
     @Column(name = "movie_metadata_id")
-    var movieMetaDataId: Long,
+    var movieMetaDataId: Long? = null,
     var keyword: String,
     @Column(length = 255, name = "product_country")
     var productCountry: String,

@@ -18,7 +18,7 @@ import jakarta.persistence.Table
 class User(
     @Id @GeneratedValue
     @Column(name = "user_id")
-    var userId: Long,
+    var userId: Long? = null,
     @Column(length = 255)
     var name: String,
     @Column(unique = true, length = 255)

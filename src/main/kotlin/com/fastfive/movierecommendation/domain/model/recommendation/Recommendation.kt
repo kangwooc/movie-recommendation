@@ -19,7 +19,7 @@ import java.time.LocalDateTime
 class Recommendation(
     @Id @GeneratedValue
     @Column(name = "recommendation_id")
-    var id: Long,
+    var recommendationId: Long? = null,
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "user_id")
     var user: User,
