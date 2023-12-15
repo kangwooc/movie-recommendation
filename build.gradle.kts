@@ -8,6 +8,7 @@ plugins {
     kotlin("plugin.spring") version kotlinVersion
     kotlin("plugin.jpa") version kotlinVersion
 
+    id("com.google.protobuf") version "0.8.15"
     id("org.jlleitschuh.gradle.ktlint") version "12.0.2"
 }
 
