@@ -7,6 +7,7 @@ import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.FetchType.LAZY
 import jakarta.persistence.GeneratedValue
+import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
 import jakarta.persistence.JoinColumn
 import jakarta.persistence.Lob
@@ -17,7 +18,7 @@ import java.time.LocalDateTime
 @Entity
 @Table(name = "ratings")
 class Rating(
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "rating_id")
     var ratingId: Long? = null,
     @Column(name = "score", precision = 10, scale = 0, columnDefinition = "numeric(2,1)")

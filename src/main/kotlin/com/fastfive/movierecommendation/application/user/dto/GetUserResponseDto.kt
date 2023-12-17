@@ -1,4 +1,4 @@
-package com.fastfive.movierecommendation.application.dto
+package com.fastfive.movierecommendation.application.user.dto
 
 data class GetUserResponseDto(
     val email: String,

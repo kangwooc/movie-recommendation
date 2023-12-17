@@ -6,6 +6,7 @@ import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.FetchType.LAZY
 import jakarta.persistence.GeneratedValue
+import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
 import jakarta.persistence.Lob
 import jakarta.persistence.OneToOne
@@ -15,7 +16,8 @@ import java.time.LocalDateTime
 @Entity
 @Table(name = "movies")
 class Movie(
-    @Id @GeneratedValue @Column(name = "movie_id")
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "movie_id")
     var movieId: Long? = null,
     var title: String,
     @Column(name = "release_date")
@@ -24,5 +26,5 @@ class Movie(
     var description: String,
     var runtime: Int,
     @OneToOne(fetch = LAZY, cascade = [ALL])
-    var movieMetaData: MovieMetaData,
+    var movieMetaData: MovieMetaData? = null,
 ) : BaseEntity()

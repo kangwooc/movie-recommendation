@@ -1,5 +1,5 @@
 CREATE TABLE cast_member (
-    cast_member_id INT PRIMARY KEY,
+    cast_member_id serial primary key ,
     name VARCHAR(255),
     bio TEXT,
     birthdate DATE,
@@ -8,7 +8,7 @@ CREATE TABLE cast_member (
 );
 
 create table genres(
-    genre_id INT PRIMARY KEY,
+    genre_id serial primary key,
     name VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
@@ -16,7 +16,7 @@ create table genres(
 
 -- 영화 정보 테이블 (Movies Table)
 CREATE TABLE movies (
-    movie_id INT PRIMARY KEY,
+    movie_id serial primary key,
     title VARCHAR(255),
     release_date DATE,
     runtime INT,
@@ -25,7 +25,7 @@ CREATE TABLE movies (
 );
 
 CREATE TABLE genres_movies (
-    genres_movies_id INT PRIMARY KEY,
+    genres_movies_id serial primary key,
     movie_id INT,
     genre_id INT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -35,14 +35,14 @@ CREATE TABLE genres_movies (
 );
 
 create table role (
-    role_id INT PRIMARY KEY,
+    role_id serial primary key,
     role_name VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE movie_cast_member (
-    movie_cast_member_id INT PRIMARY KEY,
+    movie_cast_member_id serial primary key,
     movie_id INT,
     cast_member_id INT,
     role_id INT,
@@ -58,7 +58,7 @@ CREATE TABLE movie_cast_member (
 CREATE Type gender_type AS ENUM ('M', 'F');
 
 CREATE TABLE users (
-                       user_id INT PRIMARY KEY,
+                       user_id serial primary key,
                        name VARCHAR(255),
                        email VARCHAR(255) UNIQUE,
                        gender gender_type,
@@ -69,7 +69,7 @@ CREATE TABLE users (
 );
 
 CREATE TABLE users_genre (
-    users_genre_id INT PRIMARY KEY,
+    users_genre_id serial primary key,
     user_id INT,
     genre_id INT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -80,7 +80,7 @@ CREATE TABLE users_genre (
 
 -- 사용자 평가 테이블 (Ratings Table)
 CREATE TABLE ratings (
-                         rating_id INT PRIMARY KEY,
+                         rating_id serial primary key,
                          user_id INT,
                          movie_id INT,
                          score DECIMAL(2, 1),
@@ -94,7 +94,7 @@ CREATE TABLE ratings (
 
 -- 시청 기록 테이블 (Viewing History Table)
 CREATE TABLE viewing_history (
-                                 history_id INT PRIMARY KEY,
+                                 history_id serial primary key,
                                  user_id INT,
                                  movie_id INT,
                                  view_date DATE,
@@ -107,7 +107,7 @@ CREATE TABLE viewing_history (
 
 -- 영화 메타데이터 테이블 (Movie Metadata Table)
 CREATE TABLE movie_metadata (
-        movie_metadata_id INT PRIMARY KEY,
+        movie_metadata_id serial primary key,
         movie_id INT,
         keywords TEXT,
         production_country VARCHAR(255),
@@ -121,7 +121,7 @@ CREATE TABLE movie_metadata (
 
 -- 추천 기록 테이블 (Recommendations Table)
 CREATE TABLE recommendations (
-                                 recommendation_id INT PRIMARY KEY,
+                                 recommendation_id serial primary key,
                                  user_id INT,
                                  recommended_movies TEXT,  -- JSON 형식 또는 쉼표로 구분된 문자열
                                  recommendation_date DATE,
