@@ -9,7 +9,7 @@ import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
 import jakarta.persistence.JoinColumn
-import jakarta.persistence.Lob
+import jakarta.persistence.OneToMany
 import jakarta.persistence.OneToOne
 import jakarta.persistence.Table
 import java.time.LocalDate
@@ -29,4 +29,6 @@ class Movie(
     @OneToOne(fetch = LAZY, cascade = [ALL])
     @JoinColumn(name = "movie_metadata_id")
     var movieMetaData: MovieMetaData? = null,
+    @OneToMany(mappedBy = "movie", cascade = [ALL])
+    val genresMovies: List<GenresMovies> = arrayListOf<GenresMovies>(),
 ) : BaseEntity()
