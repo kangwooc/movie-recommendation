@@ -14,14 +14,30 @@ create table genres(
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+-- 영화 메타데이터 테이블 (Movie Metadata Table)
+CREATE TABLE movie_metadata (
+                                movie_metadata_id serial primary key,
+                                keywords TEXT,
+                                production_country VARCHAR(255),
+                                language VARCHAR(100),
+                                budget BIGINT,
+                                revenue BIGINT,
+                                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                                updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
 -- 영화 정보 테이블 (Movies Table)
 CREATE TABLE movies (
     movie_id serial primary key,
+    movie_metadata_id serial,
     title VARCHAR(255),
+    description TEXT,
     release_date DATE,
     runtime INT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (movie_metadata_id) REFERENCES movie_metadata(movie_metadata_id)
 );
 
 CREATE TABLE genres_movies (
@@ -103,20 +119,6 @@ CREATE TABLE viewing_history (
                                  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                                  FOREIGN KEY (user_id) REFERENCES users(user_id),
                                  FOREIGN KEY (movie_id) REFERENCES movies(movie_id)
-);
-
--- 영화 메타데이터 테이블 (Movie Metadata Table)
-CREATE TABLE movie_metadata (
-        movie_metadata_id serial primary key,
-        movie_id INT,
-        keywords TEXT,
-        production_country VARCHAR(255),
-        language VARCHAR(100),
-        budget BIGINT,
-        revenue BIGINT,
-        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        FOREIGN KEY (movie_id) REFERENCES movies(movie_id)
 );
 
 -- 추천 기록 테이블 (Recommendations Table)

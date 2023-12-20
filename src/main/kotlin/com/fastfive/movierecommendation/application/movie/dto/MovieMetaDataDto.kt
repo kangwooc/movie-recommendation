@@ -8,19 +8,19 @@ import java.math.BigInteger
  * DTO for {@link com.fastfive.movierecommendation.domain.model.movie.MovieMetaData}
  */
 data class MovieMetaDataDto(
-    val keyword: String? = null,
-    val productCountry: String? = null,
+    val keywords: String? = null,
+    val productionCountry: String? = null,
     val language: String? = null,
     val budget: BigInteger? = null,
     val revenue: BigInteger? = null,
 ) {
     fun toEntity(movie: Movie): MovieMetaData {
         return MovieMetaData(
-            keyword = keyword ?: "",
+            keywords = keywords ?: "",
             budget = budget ?: BigInteger.ZERO,
             revenue = revenue ?: BigInteger.ZERO,
             language = language ?: "",
-            productCountry = productCountry ?: "",
+            productionCountry = productionCountry ?: "",
             movie = movie,
         )
     }

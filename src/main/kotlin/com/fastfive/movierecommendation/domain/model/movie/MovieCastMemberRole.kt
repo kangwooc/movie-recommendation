@@ -24,6 +24,6 @@ class MovieCastMemberRole(
     @JoinColumn(name = "role_id")
     var role: Role,
     @ManyToOne(fetch = LAZY)
-    @JoinColumn(name = "movie")
+    @JoinColumn(name = "movie_id")
     var movie: Movie,
 ) : BaseEntity()

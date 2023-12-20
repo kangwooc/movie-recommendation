@@ -18,7 +18,7 @@ class CastMember(
     var castMemberId: Long? = null,
     @Column(length = 255)
     var name: String,
-    @Lob
+    @Column(columnDefinition = "TEXT")
     var bio: String,
     @Column(name = "birthdate")
     var birthDate: LocalDateTime,

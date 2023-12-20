@@ -24,6 +24,7 @@ class Rating(
     @Column(name = "score", precision = 10, scale = 0, columnDefinition = "numeric(2,1)")
     var score: Double,
     @Lob
+    @Column(columnDefinition = "TEXT")
     var description: String,
     @Column(name = "rating_date")
     var ratingDate: LocalDateTime,

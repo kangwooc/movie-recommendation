@@ -4,4 +4,4 @@ import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.ResponseStatus
 
 @ResponseStatus(HttpStatus.NOT_FOUND)
-class NotFoundMemberException : MemberException(errorCode = ErrorCode.ERR001)
+class NotFoundMovieException: MovieException(errorCode = ErrorCode.ERRM001)

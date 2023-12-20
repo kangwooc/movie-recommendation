@@ -17,9 +17,9 @@ class MovieMetaData(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "movie_metadata_id")
     var movieMetaDataId: Long? = null,
-    var keyword: String,
-    @Column(length = 255, name = "product_country")
-    var productCountry: String,
+    var keywords: String,
+    @Column(length = 255, name = "production_country")
+    var productionCountry: String,
     @Column(length = 100)
     var language: String,
     var budget: BigInteger,
