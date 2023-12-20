@@ -3,6 +3,7 @@ package com.fastfive.movierecommendation.application.user.service
 import com.fastfive.movierecommendation.application.user.dto.CreateUserRequestDto
 import com.fastfive.movierecommendation.application.user.dto.GetUserRequestDto
 import com.fastfive.movierecommendation.domain.model.user.User
+import com.fastfive.movierecommendation.domain.shared.exception.member.AlreadyExistedMemberException
 import com.fastfive.movierecommendation.infrastructure.jpa.repository.user.UserRepository
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Service
@@ -26,6 +27,7 @@ class UserService(private val userRepository: UserRepository) {
     }
 
     fun create(createUserRequestDto: CreateUserRequestDto): Boolean {
+        userRepository.findByEmail(createUserRequestDto.email) ?: AlreadyExistedMemberException()
         val userDao =
             User(
                 email = createUserRequestDto.email,

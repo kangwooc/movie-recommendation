@@ -5,7 +5,7 @@ import com.fastfive.movierecommendation.application.user.dto.CreateUserResponseD
 import com.fastfive.movierecommendation.application.user.dto.GetUserRequestDto
 import com.fastfive.movierecommendation.application.user.dto.GetUserResponseDto
 import com.fastfive.movierecommendation.application.user.service.UserService
-import com.fastfive.movierecommendation.domain.shared.exception.NotFoundMemberException
+import com.fastfive.movierecommendation.domain.shared.exception.member.NotFoundMemberException
 import jakarta.validation.Valid
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping

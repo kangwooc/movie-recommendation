@@ -36,12 +36,12 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("io.hypersistence:hypersistence-utils-hibernate-60:3.6.1")
     implementation ("com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.9.0")
+    developmentOnly("org.springframework.boot:spring-boot-devtools")
 
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     runtimeOnly("org.postgresql:postgresql")
 
 
-    developmentOnly("org.springframework.boot:spring-boot-devtools")
     testImplementation("org.springframework.boot:spring-boot-starter-test") {
         exclude(module = "mockito-core")
     }
