@@ -9,7 +9,6 @@ private val mockUserRepository: UserRepository = mockk()
 
 @InjectMockKs
 val mockUserService: UserService = UserService(mockUserRepository)
-@SpringBootTest
 internal class UserServiceTest {
 
 }

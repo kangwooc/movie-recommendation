@@ -1,4 +1,4 @@
-package com.fastfive.movierecommendation.application.user.presentation
+package com.fastfive.movierecommendation.presentation
 
 import com.fastfive.movierecommendation.application.user.dto.CreateUserRequestDto
 import com.fastfive.movierecommendation.application.user.dto.CreateUserResponseDto
